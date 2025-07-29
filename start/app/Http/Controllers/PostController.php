@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\UserController;
 
 class PostController extends Controller
 {
@@ -12,8 +13,9 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
-        dd($request->all());
-        dd('hello from index from post controller');
+        // dd($request->all());
+        // dd('hello from index from post controller');
+    return redirect()->action([UserController::class, 'index']);
     }
 
     /**

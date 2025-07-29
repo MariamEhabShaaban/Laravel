@@ -24,46 +24,46 @@ Route::get('/', function () {
 
 
 
-Route::get('/mariam', [TestController::class, 'mariam']);
-// Route params  required
-Route::get('/printName/{name}', [TestController::class, 'printName']);
+// Route::get('/mariam', [TestController::class, 'mariam']);
+// // Route params  required
+// Route::get('/printName/{name}', [TestController::class, 'printName']);
 
-// Route params  optional  &&  Named Routes  if i use name i use route in href but i i don't i use url in href
-// if i change address that is not affect on name
-Route::get('/print-name/{name?}', [TestController::class, 'printName'])->name('printName');
-Route::get('/index',[UserController::class,'index']);
+// // Route params  optional  &&  Named Routes  if i use name i use route in href but i i don't i use url in href
+// // if i change address that is not affect on name
+ Route::get('/print-name/{name?}', [TestController::class, 'printName'])->name('printName');
+// Route::get('/index',[UserController::class,'index']);
 
-Route::get('/index', function () {
-    return view('index');
-});
+// Route::get('/index', function () {
+//     return view('index');
+// });
 
 // not best practice
 
 // shorthand route
-Route::view('/index','index');
+// Route::view('/index','index');
 
 
 // redirect
 
-Route::redirect('/here', '/there');
+// Route::redirect('/here', '/there');
 
- Route::get('/hello', SingleController::class);
+//  Route::get('/hello', SingleController::class);
                    // name posts.function_name
 Route::resource('posts',PostController::class)->only(['index','create']);
-
-Route::controller(TestController::class)->name('test.')->group(function(){
+Route::get('/index',[UserController::class,'index']);
+// Route::controller(TestController::class)->name('test.')->group(function(){
 
 // بس هشيل اسم الcontroller
-               // /test/mariam
-Route::get('/mariam', 'mariam');
+              // /test/mariam
+// Route::get('/mariam', 'mariam');
 // Route params  required
-Route::get('/printName/{name}', [TestController::class, 'printName']);
+// Route::get('/printName/{name}', [TestController::class, 'printName']);
 
 // Route params  optional  &&  Named Routes  if i use name i use route in href but i i don't i use url in href
 // if i change address that is not affect on name
-Route::get('/print-name/{name?}', 'printName')->name('printName');// name test.printName
+// Route::get('/print-name/{name?}', 'printName')->name('printName');// name test.printName
 
-});
+// });
 
 
 
