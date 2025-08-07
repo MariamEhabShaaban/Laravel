@@ -23,17 +23,18 @@ class FormContactRequest extends FormRequest
     {
         return [
             //
-            'first-name' => ['required', 'string', 'min:5'],
-            'last-name' => ['required', 'string', 'min:5'],
+            'first_name' => ['required', 'string', 'min:5'],
+            'last_name' => ['required', 'string', 'min:5'],
             'email' => "required|email",
-            "messege" => "nullable"
+            'category_id' => 'required|exists:categories,id',
+            "message" => "nullable"
         ];
     }
 
     public function messages()
     {
         return [
-            'first-name.required' => 'My customize error'
+            'first_name.required' => 'My customize error'
         ];
     }
 }
